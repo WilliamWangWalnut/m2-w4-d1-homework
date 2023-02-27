@@ -90,14 +90,20 @@
     <aside id="leftside"></aside>
     <aside id="rightside"></aside>
     <div id="container">
-    <header><span>Food Blog</span></header>
+    <!-- Add Component1 -->
+    <header id="component1">
+        <mycomponent1></mycomponent1>
+    </header>
 
     <main>
     
     <aside id="photos">
         <img src="images/chili.jpg" alt="White Chicken Chili" width="180">
     </aside>
-    <h2>Comments</h2>
+    <!-- Add Component2 -->
+    <div id="component2">
+        <mycomponent2></mycomponent2>
+    </div>
     
     
     <section id="blogposts">
@@ -106,28 +112,28 @@
 
     </div>
 
-
+    <!-- Add Instance 1 -->
     <div class="post" id="post1">
         <span class="author">{{author}}</span> — 
         <span class="date">{{date}}</span>
         <span class="reply">{{reply}}</span>
         <p>{{paragraph}}</p>
     </div>
-
+    <!-- Add Instance 2 -->
     <div class="post" id="post2">
         <span class="author">{{author}}</span> — 
         <span class="date">{{date}}</span>
         <span class="reply">{{reply}}</span>
         <p>{{paragraph}}</p>
     </div>
-
+    <!-- Add Instance 3 -->
     <div class="post" id="post3">
         <span class="author">{{author}}</span> — 
         <span class="date">{{date}}</span>
         <span class="reply">{{reply}}</span>
         <p>{{paragraph}}</p>
     </div>
-
+    <!-- Add Instance 4 -->
     <div class="post" id="post4">
         <span class="author">{{author}}</span> — 
         <span class="date">{{date}}</span>
@@ -148,6 +154,26 @@
 
 
 <script>
+    // Components
+    var vm1 = new Vue({
+        el: '#component1',
+        components:{
+            'mycomponent1': {
+                template: '<span>Food Blog</span>'
+            }
+        }
+    });
+
+    var vm2 = new Vue({
+        el: '#component2',
+        components:{
+            'mycomponent2': {
+                template: '<h2>Comments</h2>'
+            }
+        }
+    });
+
+    // Instances
     var app1 = new Vue({
         el: '#post1',
         data: {
